@@ -166,14 +166,16 @@ class Optionparse {
 		}
 		$pad = str_pad('',$w);
 		foreach($this->opts as $o){
-			$h = $this->helpline($o);
-			if(strlen($h)>$w){
-				echo '  ', "{$h}\n  {$pad}";
+			$h = str_pad($this->helpline($o),$w);
+			echo '  ', $h;
+			if(isset($o['description'])){
+				if(strlen($h)>$w){
+					echo "\n  ", $pad;
+				}
+				$d = str_replace("\n","\n  {$pad}",$o['description']);
+				echo '  ', $d;
 			}
-			else{
-				echo '  ', str_pad($h, $w);
-			}
-			echo "  {$o['description']}\n";
+			echo "\n";
 		}
 	}
 
