@@ -21,7 +21,7 @@ is include/require this file.
     
     // exsample for the option which has associated argument.
     // the attribute 'help_name' is required.
-    // hese styles are supported:
+    // these styles are supported:
     //   -p/path/to/dir -p=/path/to/dir -p /path/to/dir
     //   --path=/path/to/dir --path /path/to/dir
     $parser->addOption('path',array(
